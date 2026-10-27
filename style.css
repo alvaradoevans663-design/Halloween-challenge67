@@ -1,0 +1,77 @@
+:root{--bg:#0b0612;--card:#170d26;--line:#3a2160;--orange:#ff7a18;--purple:#9b5cff;--white:#f7f3ff;--muted:#b9aad6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 50% -10%,#2a1248 0,var(--bg) 55%) fixed;color:var(--white);font-family:Nunito,system-ui,sans-serif;font-size:18px;line-height:1.5;min-height:100vh;overflow-x:hidden}
+h1,h2,h3{font-family:Creepster,Impact,sans-serif;font-weight:400;letter-spacing:.04em;margin:0}
+.web{position:fixed;top:0;left:0;width:min(46vw,260px);opacity:.22;pointer-events:none}
+.bats{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.bats span{position:absolute;top:12%;left:-10%;font-size:28px;animation:fly 18s linear infinite}
+.bats span:nth-child(2){top:30%;animation-delay:6s;font-size:22px}
+.bats span:nth-child(3){top:6%;animation-delay:12s;font-size:34px}
+@keyframes fly{to{transform:translateX(120vw) translateY(40px)}}
+.hero{text-align:center;padding:56px 18px 28px;position:relative}
+.ghost{font-size:64px;animation:float 3.5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+h1{font-size:clamp(2.6rem,11vw,5.2rem);line-height:1;color:var(--orange);text-shadow:0 0 24px #ff7a1866,3px 3px 0 var(--purple)}
+.sub{color:var(--muted);max-width:30ch;margin:14px auto 22px}
+.stats{display:flex;justify-content:center;gap:14px;margin-bottom:22px}
+.stats div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 18px;min-width:120px}
+.stats b{display:block;font-size:1.8rem;color:var(--orange)}
+.stats span{font-size:.8rem;color:var(--muted)}
+.whoami{margin:14px 0 0;color:var(--muted)}
+.btn{font:800 1.05rem Nunito,sans-serif;color:#1a0a00;background:linear-gradient(180deg,#ff9a3c,var(--orange));border:0;border-radius:14px;padding:14px 22px;min-height:52px;cursor:pointer;box-shadow:0 4px 0 #a34700;transition:transform .1s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #a34700}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.big{font-size:1.4rem;padding:18px 40px}
+.btn.ghost{background:transparent;color:var(--white);border:2px solid var(--purple);box-shadow:none}
+.btn.ok{background:#35d07f;box-shadow:0 4px 0 #1b8a52}
+.btn.no{background:#ff5a6e;box-shadow:0 4px 0 #a02335;color:#fff}
+:focus-visible{outline:3px solid var(--white);outline-offset:3px}
+main{max-width:640px;margin:0 auto;padding:0 16px 30px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:20px}
+.panel h2{font-size:2rem;color:var(--purple);margin-bottom:12px}
+.dots{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.dots button{width:34px;height:34px;border-radius:50%;border:2px solid var(--line);background:transparent;color:var(--white);font-weight:800;cursor:pointer}
+.dots .cur{border-color:var(--orange);color:var(--orange)}
+.dots .sent{background:#4a2a85}
+.dots .won{background:var(--orange);color:#1a0a00;border-color:var(--orange)}
+.card .num{margin:0;color:var(--muted)}
+.card h2{font-size:2.3rem;color:var(--orange)}
+.state{font-weight:800;min-height:1.5em}
+.photo{display:block;border:2px dashed var(--purple);border-radius:14px;padding:16px;text-align:center;cursor:pointer;margin:12px 0}
+.photo input{display:none}
+#preview{display:block;max-width:100%;max-height:240px;border-radius:12px;margin:0 auto 12px}
+#btnComplete{width:100%}
+.nav{display:flex;gap:10px;margin-top:14px}.nav .btn{flex:1}
+.board{list-style:none;padding:0;margin:0 0 16px}
+.board li{display:flex;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:12px;background:#22123a;margin-bottom:8px}
+.board li:first-child{border:1px solid var(--orange)}
+.board em{color:var(--muted);font-style:normal;font-size:.85rem}
+.rules{padding-left:20px;margin:0}.rules li{margin-bottom:8px}
+footer{text-align:center;color:var(--muted);font-size:.8rem;padding:10px 16px 30px}
+dialog{background:var(--card);color:var(--white);border:2px solid var(--purple);border-radius:20px;width:min(92vw,520px);max-height:88vh;padding:20px}
+dialog::backdrop{background:#000b}
+dialog h3{font-size:1.9rem;color:var(--orange);margin-bottom:10px}
+dialog input[type=text],dialog input[type=password],#inName{width:100%;font:inherit;padding:14px;border-radius:12px;border:2px solid var(--line);background:#0b0612;color:var(--white);margin-bottom:12px}
+dialog menu{padding:0;margin:12px 0 0;display:flex;gap:10px}dialog menu .btn{flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:6px}
+.chips button{background:#22123a;color:var(--white);border:1px solid var(--purple);border-radius:20px;padding:8px 14px;font:inherit;cursor:pointer}
+.sub-item{background:#22123a;border-radius:12px;padding:12px;margin-bottom:10px}
+.sub-item img{max-width:100%;max-height:200px;border-radius:8px;display:block;margin:8px 0}
+.sub-item .row{display:flex;gap:8px}.sub-item .row .btn{flex:1;padding:10px;min-height:44px}
+.org-actions{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;padding:12px 20px;border-radius:30px;font-weight:800;z-index:50;max-width:90vw;text-align:center}
+.celebrate{position:fixed;inset:0;background:#000d;display:flex;align-items:center;justify-content:center;z-index:60;overflow:hidden;padding:20px}
+.cbox{text-align:center;animation:pop .5s ease-out}
+.cbox h2{font-size:clamp(2.4rem,10vw,4rem);color:var(--orange)}
+.big-emoji{font-size:90px;animation:float 1.5s ease-in-out infinite}
+.fall{position:absolute;top:-10%;animation:fall linear forwards;font-size:28px}
+@keyframes fall{to{transform:translateY(115vh) rotate(360deg)}}
+@keyframes pop{from{transform:scale(.4);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+
+.timer{display:flex;align-items:center;gap:12px;margin:14px 0 6px}
+#tClock{font:400 2.6rem Creepster,Impact,sans-serif;color:var(--purple);letter-spacing:.06em;min-width:5ch}
+.timer .btn{flex:1}
+.timer.run #tClock{color:var(--orange);text-shadow:0 0 14px #ff7a1888}
+.best{margin:0 0 6px;color:var(--muted);font-size:.9rem}

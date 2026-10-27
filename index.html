@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halloween Challenge 🎃</title>
+<meta name="theme-color" content="#0b0612">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bats" aria-hidden="true"><span>🦇</span><span>🦇</span><span>🦇</span></div>
+<svg class="web" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width=".6"><path d="M0 0L100 0M0 0L0 100M0 0L100 100M0 0L100 45M0 0L45 100"/><path d="M20 0Q18 18 0 20M40 0Q34 34 0 40M60 0Q50 50 0 60M80 0Q66 66 0 80"/></g></svg>
+
+<header class="hero">
+  <div class="ghost" aria-hidden="true">👻</div>
+  <h1>HALLOWEEN CHALLENGE</h1>
+  <p class="sub">¿Quién conseguirá completar todos los retos primero?</p>
+  <div class="stats">
+    <div><b id="statDone">0/9</b><span>retos con ganador</span></div>
+    <div><b id="statMine">0</b><span>tus puntos</span></div>
+  </div>
+  <button id="btnStart" class="btn big">🎃 COMENZAR</button>
+  <p id="whoami" class="whoami" hidden></p>
+</header>
+
+<main>
+  <section id="game" class="panel" hidden>
+    <div class="dots" id="dots" role="tablist" aria-label="Retos"></div>
+    <article class="card" aria-live="polite">
+      <p class="num" id="rNum"></p>
+      <h2 id="rTitle"></h2>
+      <p id="rDesc"></p>
+      <div class="timer"><span id="tClock">00:00</span><button id="btnTimer" class="btn ghost">⏱️ Iniciar cronómetro</button></div>
+      <p class="best" id="rBest"></p>
+      <p class="state" id="rState"></p>
+      <label class="photo" id="photoBox">
+        <span id="photoLabel">📷 Adjuntar foto de prueba</span>
+        <input type="file" id="photoInput" accept="image/*" capture="environment">
+      </label>
+      <img id="preview" alt="Vista previa de la prueba" hidden>
+      <button id="btnComplete" class="btn">✅ Completar reto</button>
+    </article>
+    <nav class="nav">
+      <button id="btnPrev" class="btn ghost">← Anterior</button>
+      <button id="btnNext" class="btn">Siguiente reto →</button>
+    </nav>
+  </section>
+
+  <section class="panel" id="boardSec">
+    <h2>🏆 Clasificación</h2>
+    <ol id="board" class="board"></ol>
+    <button id="btnOrg" class="btn ghost">🔑 Modo organizador</button>
+  </section>
+
+  <section class="panel">
+    <h2>📜 Reglas</h2>
+    <ul class="rules">
+      <li>Elige un nombre o apodo y recorre las calles pidiendo dulces.</li>
+      <li>Al terminar un reto, pulsa «Completar reto» y adjunta tu foto como prueba.</li>
+      <li>El organizador valida la prueba. El primero en ser validado gana el punto del reto.</li>
+      <li>Solo puedes enviar una prueba por reto.</li>
+      <li>Gana quien tenga más puntos cuando todos los retos tengan ganador.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>Datos guardados solo en este navegador · Hecho para una noche de dulces 🍬</footer>
+
+<dialog id="dlgName"><form method="dialog" id="formName">
+  <h3>¿Cómo te llamas?</h3>
+  <input id="inName" maxlength="20" placeholder="Nombre o apodo" autocomplete="off" required>
+  <div id="existing" class="chips"></div>
+  <menu><button class="btn" value="ok">Entrar</button></menu>
+</form></dialog>
+
+<dialog id="dlgOrg"><div id="orgBody"></div><menu><button id="orgClose" class="btn ghost">Cerrar</button></menu></dialog>
+
+<div id="toast" class="toast" role="status" hidden></div>
+<div id="celebrate" class="celebrate" hidden><div class="cbox"><div class="big-emoji">🎃</div><h2 id="cTitle"></h2><p id="cText"></p></div></div>
+<script src="script.js"></script>
+</body>
+</html>
