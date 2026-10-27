@@ -75,3 +75,4 @@ dialog menu{padding:0;margin:12px 0 0;display:flex;gap:10px}dialog menu .btn{fle
 .timer .btn{flex:1}
 .timer.run #tClock{color:var(--orange);text-shadow:0 0 14px #ff7a1888}
 .best{margin:0 0 6px;color:var(--muted);font-size:.9rem}
+[hidden]{display:none!important}
